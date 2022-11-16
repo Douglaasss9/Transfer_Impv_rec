@@ -217,7 +217,7 @@ def convert_sentence(path, sentinet, gloss_embedding, gloss_embedding_norm):
     clean_text_list, pos_list, senti_list, mask_sent_list, mask_list = process_text(text_list, sentinet, gloss_embedding, gloss_embedding_norm)
     text_pos_senti_list = []
     for i in range(len(clean_text_list)):
-        wl = {"content": " ".join(mask_sent_list[i]), "line": " ".join(clean_text_list[i]), "masks":mask_list[i], "label": operation}
+        wl = {"content": " ".join(mask_sent_list[i]), "line": " ".join(clean_text_list[i]), "masks":mask_list[i], "label": sys.argv[3][-1]}
         wl_str = json.dumps(wl)
         fw.write(wl_str)
         fw.write("\n")
